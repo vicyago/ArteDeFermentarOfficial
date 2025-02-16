@@ -1,0 +1,136 @@
+#slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#slider #line {
+    height: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#slider #dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+#slider #dots li {
+    transition: 0.3s;
+    list-style-type: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 0.25em;
+    cursor: pointer;
+}
+
+#slider #dots li:hover,
+#slider #dots li.active {
+    background: white;
+}
+
+@keyframes line {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+#back,
+#forword {
+    filter: sepia(5%) brightness(110%) contrast(100%);
+}
+
+#slider #back,
+#slider #forword {
+    width: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 2rem;
+}
+
+#slider #forword {
+    left: auto;
+    right: 0;
+}
+
+#slider #back span:hover,
+#slider #forword span:hover {
+    opacity: 0.5;
+    scale: 90%;
+}
+@media screen and (max-width: 768px) {
+#back,
+#forword {
+    scale: 50%;
+    margin: 1rem;
+}
+}
+
+ul#move {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    background: gray;
+    margin-right: 100%;
+}
+
+ul#move li {
+    transition: 0.6s;
+    min-width: 100%;
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul#move li img {
+    width: 100%;
+    height: auto;
+}
+
+ul#move li:nth-child(1) {
+    background-color: white;
+}
+
+ul#move li:nth-child(2) {
+    background-color: white;
+}
+
+ul#move li:nth-child(3) {
+    background-color: white;
+}
+
+ul#move li:nth-child(4) {
+    background-color: white;
+}
+
+ul#move li:nth-child(5) {
+    background-color: white;
+}
