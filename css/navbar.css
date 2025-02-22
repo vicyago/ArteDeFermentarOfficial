@@ -1,94 +1,170 @@
+/* Main Navigation Container */
 .nav {
     height: 100%;
     width: 100%;
     background-color: #bdeca965;
-    position: relative;    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
 
-.nav img {
-    width: 90%;
+/* Logo Styles */
+.nav-header {
+    display: flex;
+    align-items: center;
 }
 
-.nav > .nav-header {
-    display: inline;
-}
-
-.nav > .nav-header > .nav-title {
-    display: inline-block;
-    color: #fff;
+.nav-title {
     padding-left: 1em;
 }
 
-.nav > .nav-btn {
+.nav-title img {
+    width: 90%;
+    max-width: 200px;
+    height: auto;
+}
+
+/* Hide Checkbox and Mobile Button by Default */
+#nav-check,
+.nav-btn {
     display: none;
 }
 
-.nav > .nav-links {
-    display: inline;
-    float: right;
-    font-size: 1.2rem;
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.nav > .nav-links > a {
+.nav-links a {
     display: inline-block;
-    padding: 2em;
+    padding: 1em 2em;
     text-decoration: none;
-    color: #000000;
+    color: #000;
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.nav > .nav-links > a:hover {
-    color: #ffffff;
-    scale: 90%;
+/* Hover Effect with Underline */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-.nav > #nav-check {
-    display: none;
+.nav-links a:hover {
+    color: #fff;
 }
 
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+/* Mobile Navigation Styles */
 @media (max-width: 600px) {
-    .nav > .nav-btn {
-        display: inline-block;
+    .nav {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    /* Show Mobile Button */
+    .nav-btn {
+        display: block;
+        order: -1; /* Move to the start */
+        margin-right: 1rem;
+    }
+
+    .nav-btn label {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .nav-btn label span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #000;
+        transition: all 0.3s ease-in-out;
+        transform-origin: center;
+    }
+
+    /* Hamburger Animation */
+    #nav-check:checked ~ .nav-btn label span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    #nav-check:checked ~ .nav-btn label span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    #nav-check:checked ~ .nav-btn label span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Mobile Navigation Links */
+    .nav-links {
+        display: none;
+        width: 100%;
+        background-color: rgba(96, 105, 92, 0.95);
         position: absolute;
-        right: 0px;
-        top: 0px;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: stretch;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
     }
-    .nav > .nav-btn > label {
-        display: inline-block;
+
+    #nav-check:checked ~ .nav-links {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        padding: 1rem 2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
         width: 100%;
-        height: 125px;
-        padding: 40px;
+        box-sizing: border-box;
     }
-    .nav > .nav-btn > label:hover,
-    .nav #nav-check:checked ~ .nav-btn > label {
-        background-color: #60695c;
+
+    .nav-links a:last-child {
+        border-bottom: none;
     }
-    .nav > .nav-btn > label > span {
-        display: block;
-        width: 4em;
-        height: 1.5em;
-        border-top: 2px solid rgb(0, 0, 0);
+
+    /* Adjust Hover Effect for Mobile */
+    .nav-links a::after {
+        display: none;
     }
-    .nav > .nav-links {
-        position: absolute;
-        display: block;
-        width: 100%;
-        background-color: #60695c;
-        height: 0px;
-        transition: all 0.3s ease-in;
-        overflow-y: hidden;
-        top: 99%;
-        left: 0px;
-        opacity: 0.8;
+
+    .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: none;
     }
-    .nav > .nav-links > a {
-        display: block;
-        width: 100%;
-    }
-    .nav > #nav-check:not(:checked) ~ .nav-links {
-        height: 0px;
-    }
-    .nav > #nav-check:checked ~ .nav-links {
-        height: calc(100vh - 50px);
-        overflow-y: auto;
+}
+
+/* Larger Screen Adjustments */
+@media (min-width: 601px) and (max-width: 900px) {
+    .nav-links a {
+        padding: 1em;
+        font-size: 1rem;
     }
 }

@@ -1,28 +1,37 @@
+/* Product Grid Layout */
 .product-container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
 }
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Product Card Styling */
 .product-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 300px;
+    margin: 10px;
+    padding: 1% 0;
+    background-color: white;
     border: 1px solid lightgray;
     border-radius: 5px;
-    overflow: hidden;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    background-color: white;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    overflow: hidden;
 }
 
 .product-image {
     width: 30%;
 }
 
+/* Product Text Elements */
 .product-name {
     font-size: 1.25rem;
     font-weight: bold;
@@ -36,6 +45,7 @@
     text-align: center;
 }
 
+/* Price Styling */
 .product-price {
     font-size: 1.125rem;
     font-weight: bold;
@@ -43,33 +53,29 @@
     color: #357960;
 }
 
+.original-price {
+    font-size: 0.875rem;
+    color: #003E29;
+    text-decoration: line-through;
+}
+
+.discount-price {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #357960;
+}
+
+/* Button Styling */
 .add-to-cart-button {
     padding: 10px 20px;
+    font-size: 0.875rem;
+    color: white;
     background-color: #357960;
     border: none;
     border-radius: 5px;
-    color: white;
-    font-size: 0.875rem;
     cursor: pointer;
 }
 
 .add-to-cart-button:hover {
     background-color: #92A144;
-}
-
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.original-price {
-    text-decoration: line-through;
-    color: #003E29;
-    font-size: 0.875rem;
-}
-
-.discount-price {
-    color: #357960;
-    font-size: 1.125rem;
-    font-weight: bold;
 }
