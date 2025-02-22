@@ -1,0 +1,37 @@
+/* Basic CSS for .twelve class */
+.twelve {
+    display: flex;              /* Use flexbox for layout */
+    align-items: center;       /* Center items vertically */
+    justify-content: space-between; /* Add space between the items */
+    padding: 20px;             /* Add some padding */
+}
+
+.product-image {
+    width: 40%;              /* Set a fixed width for the image */
+    height: auto;              /* Keep the aspect ratio */
+    border-radius: 10px;
+    margin-left: 25px;       /* Optional: Add rounded corners */
+}
+
+.product-description {
+    max-width: 600px;          /* Set a maximum width for the text */
+    margin-right: 55px;        /* Margin to the right for some spacing */
+    font-size: 16px;           /* Adjust font size */
+    line-height: 1.6;          /* Improve readability with line spacing */
+}
+
+@media (max-width: 768px) {  /* Responsive adjustments for smaller screens */
+    .twelve {
+        flex-direction: column; /* Stack the items on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .product-image {
+        width: 100%;            /* Full width for the image */
+        margin-bottom: 20px;    /* Add space below the image */
+    }
+
+    .product-description {
+        margin-right: 0;        /* Reset margin for smaller screens */
+    }
+}
