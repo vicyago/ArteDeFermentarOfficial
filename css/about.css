@@ -29,6 +29,7 @@
     .product-image {
         width: 100%;            /* Full width for the image */
         margin-bottom: 20px;    /* Add space below the image */
+        margin-left: 0;
     }
 
     .product-description {
