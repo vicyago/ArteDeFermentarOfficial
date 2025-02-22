@@ -9,8 +9,6 @@
     justify-content: space-between;
     padding: 0.5rem;
     box-sizing: border-box;
-    border-radius: 10px; /* Round borders for the navbar */
-    overflow: hidden; /* Ensures no overflow from rounded corners */
 }
 
 /* Logo Styles */
@@ -40,9 +38,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: #6fd34434;
-    padding: 0.5rem; /* Padding for nice spacing inside the nav links */
-    border-radius: 10px; /* Round borders for the navigation links container */
+    
 }
 
 .nav-links a {
@@ -53,7 +49,6 @@
     font-size: 1.2rem;
     position: relative;
     transition: all 0.3s ease;
-    border-radius: 10px; /* Round borders for individual nav items */
 }
 
 /* Hover Effect with Underline */
@@ -75,16 +70,6 @@
 
 .nav-links a:hover::after {
     width: 80%;
-}
-
-/* Division between Navigation Items */
-.nav-links a:not(:last-child) {
-    border-right: 1px solid rgba(255, 255, 255, 0.3); /* Vertical divider */
-    padding-right: 1.5em; /* Adjust padding for spacing before the border */
-}
-
-.nav-links a:last-child {
-    border-right: none; /* Remove border for the last item */
 }
 
 /* Mobile Navigation Styles */
