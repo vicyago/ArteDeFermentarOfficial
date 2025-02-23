@@ -1,0 +1,131 @@
+.index-product-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+.index-product-slider {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.index-product-card {
+    flex: 0 0 200px;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.index-product-card:hover {
+    transform: translateY(-5px);
+}
+
+.index-product-image {
+    width: 80%;
+    height: auto;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.index-product-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 8px 0;
+    color: #333;
+}
+
+.index-product-description {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 8px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.index-product-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 8px 0;
+}
+
+.index-original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+.index-discount-price {
+    color: #e74c3c;
+}
+
+.index-add-to-cart-button {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.index-add-to-cart-button:hover {
+    background: #34495e;
+}
+
+.index-slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.index-slider-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.index-prev-button {
+    left: 0;
+}
+
+.index-next-button {
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .index-product-container {
+        padding: 0 30px;
+    }
+    
+    .index-product-card {
+        flex: 0 0 150px;
+    }
+    
+    .index-slider-button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}

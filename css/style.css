@@ -31,11 +31,6 @@ body {
     order: -1;
 }
 
-header,
-footer {
-    background: #eff7ff;
-}
-
 article {
     margin-top: 5em;
 }

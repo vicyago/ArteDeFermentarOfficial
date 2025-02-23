@@ -5,7 +5,7 @@ window.onload = function () {
     let forword = document.querySelector("#slider #forword");
     let back = document.querySelector("#slider #back");
     let counter = 1;
-    let time = 3000;
+    let time = 6000;
     let line = document.querySelector("#slider #line");
     let dots = document.querySelector("#slider #dots");
     let dot;
